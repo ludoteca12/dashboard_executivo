@@ -1,0 +1,86 @@
+table FactSales
+	lineageTag: 0ae4ae36-2cbd-4bdd-a9bf-c82d90016260
+
+	column SalesID
+		dataType: string
+		lineageTag: 19693c94-3ff9-4bc5-8362-0b80e1d7e545
+		summarizeBy: none
+		sourceColumn: SalesID
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 4dfa2fc4-d5b5-488b-9ad8-78942394734a
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CustomerID
+		dataType: string
+		isHidden
+		lineageTag: 017c52a8-7531-4603-b1c6-351557245bdd
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductID
+		dataType: string
+		isHidden
+		lineageTag: 6c45a87a-4912-4ad1-aa69-bdcad4f0cc54
+		summarizeBy: none
+		sourceColumn: ProductID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 7928b34b-739e-4146-b998-bfbd59e8f70b
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b85564f-c62e-4e25-8683-ca1b6435111c
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiscountAmount
+		dataType: int64
+		formatString: 0
+		lineageTag: e755f6e1-4270-41fe-9c58-e0f9f12d5627
+		summarizeBy: sum
+		sourceColumn: DiscountAmount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactSales = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\VVMAT\OneDrive\Documentos\entrevista_tecnica\FactSales.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"SalesID", type text}, {"OrderDate", type date}, {"CustomerID", type text}, {"ProductID", type text}, {"Quantity", Int64.Type}, {"UnitPrice", Int64.Type}, {"DiscountAmount", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,12 @@
+relationship AutoDetected_aa70c5d0-a384-4767-812d-c716bd3192e0
+	fromColumn: FactSales.ProductID
+	toColumn: DimProduct.ProductID
+
+relationship AutoDetected_a05aa3c8-ddf3-4bf4-9761-3d3911b8a53c
+	fromColumn: FactSales.CustomerID
+	toColumn: DimCustomer.CustomerID
+
+relationship bfd51907-998b-13c7-068f-e72db5e9b50d
+	fromColumn: FactSales.OrderDate
+	toColumn: DimDate.Date
+

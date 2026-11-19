@@ -1,0 +1,178 @@
+table _Measures
+	lineageTag: 93f0b4bf-5d7b-4014-b3d2-3593aba04e21
+
+	measure 'Gross Revenue' =
+			
+			SUMX(
+			    FactSales,
+			    FactSales[Quantity] * FactSales[UnitPrice]
+			)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: revenue
+		lineageTag: fe3f6ae1-f3bc-44e9-9324-be615d7be578
+
+	measure 'Total Revenue' =
+			
+			[Gross Revenue] - SUM(FactSales[DiscountAmount])
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: revenue
+		lineageTag: a463d1f2-df11-47ef-9c45-4cbfffc9c0d9
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Total Orders' =
+			
+			COUNTROWS(FactSales)
+		formatString: #,0
+		displayFolder: orders
+		lineageTag: 37f39088-cb53-4872-a8a4-29da4b556f4c
+
+	measure 'Average Order Value' =
+			
+			DIVIDE(
+			    [Total Revenue],
+			    [Total Orders]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: orders
+		lineageTag: aa536353-3ae7-4ce1-aece-08beeac91d2e
+
+	measure 'Revenue PY' =
+			
+			CALCULATE(
+			    [Total Revenue],
+			    SAMEPERIODLASTYEAR(DimDate[Date])
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: revenue
+		lineageTag: 8dce67f1-bcfe-4243-b06b-bec570a6ec67
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'YoY Revenue Growth %' =
+			
+			IF (
+			    HASONEVALUE ( DimDate[Year] ),
+			    DIVIDE ( [Total Revenue] - [Revenue PY], [Revenue PY] )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: revenue
+		lineageTag: ca2699ea-38d9-4b2d-b779-9333ebde5ffc
+
+	measure 'Rolling 3-Month Revenue' =
+			
+			CALCULATE(
+			    [Total Revenue],
+			    DATESINPERIOD(DimDate[Date], MAX(DimDate[Date]), -3, MONTH)
+			)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: revenue
+		lineageTag: 471f405d-89b8-48ed-a570-3a72037c2d7d
+
+	measure 'KPI Status Color' =
+			
+			SWITCH(
+			    TRUE(),
+			    [YoY Revenue Growth %] > 0, "#00875A",
+			    [YoY Revenue Growth %] < 0, "#DE350B",
+			    "#6B778C"
+			)
+		displayFolder: helpers
+		lineageTag: 3b1dc8a3-69cc-4a1f-be41-06d5ceab45f7
+
+	measure 'Total Cost' = ```
+			
+			SUMX(
+			    FactSales,
+			    FactSales[Quantity] * RELATED(DimProduct[StandardCost]) 
+			)
+			```
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: cost
+		lineageTag: 28612ba9-6d1e-4f95-86cd-621fa3fad3a7
+
+	measure 'Gross Margin' =
+			
+			[Total Revenue] - [Total Cost]
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: margin
+		lineageTag: 7078f44c-4d72-4b49-a439-f155de9ede24
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Gross Margin %' =
+			
+			DIVIDE(
+			    [Gross Margin],
+			    [Total Revenue]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: margin
+		lineageTag: d0d5552e-c74b-4fa3-9507-8fa84630bd9a
+
+	measure 'Customer Count' =
+			
+			DISTINCTCOUNT(FactSales[CustomerID])
+		formatString: 0
+		displayFolder: helpers
+		lineageTag: 9494101c-e398-4841-af0f-d5862ee555f7
+
+	measure 'Orders Per Customer' =
+			
+			DIVIDE(
+			    [Total Orders],
+			    [Customer Count]
+			)
+		formatString: 0.0
+		displayFolder: orders
+		lineageTag: 73ccc3f4-cac1-4c0b-b73f-835a65a735e9
+
+	measure 'Margin Band Color' =
+			
+			SWITCH (
+			    TRUE (),
+			    ISBLANK ( [Gross Margin %] ), "#6B778C",
+			    [Gross Margin %] >= 0.1, "#00875A",
+			    "#DE350B"
+			)
+		displayFolder: helpers
+		lineageTag: 0fb68984-e189-4923-b53f-022fd88dd764
+
+	measure 'Trend Title' =
+			
+			SWITCH (
+			    SELECTEDVALUE ( 'Metric Selector'[Metric Selector Order] ),
+			    0, "Total Orders",
+			    1, "Total Revenue",
+			    2, "YoY Revenue Growth % by Month",
+			    "Monthly Trend"
+			)
+		displayFolder: helpers
+		lineageTag: 170f3f0c-bb4f-47ec-a7f2-c684aa0f1b8c
+
+	measure 'Drill Title' =
+			
+			VAR _Seg = COALESCE(SELECTEDVALUE(DimCustomer[CustomerSegment]), "All Segments")
+			VAR _Cat = COALESCE(SELECTEDVALUE(DimProduct[Category]), "All Categories")
+			VAR _Sub = SELECTEDVALUE(DimProduct[SubCategory])
+			
+			RETURN
+			    "Deep-Dive: " & _Seg & "  |  " & _Cat
+			        & IF (NOT ISBLANK ( _Sub ), " › " & _Sub)
+		displayFolder: helpers
+		lineageTag: b5c0690c-ac23-481a-a419-791b43e2a70b
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

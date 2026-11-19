@@ -1,0 +1,49 @@
+table 'Metric Selector'
+	lineageTag: 17532c2b-6f82-4ead-bfab-91af4fc99451
+
+	column 'Metric Selector'
+		lineageTag: 8b9e48a7-bbee-4040-85f5-5710d253b1e5
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Metric Selector Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Metric Selector Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Selector Fields'
+		isHidden
+		lineageTag: fd11524c-6e03-485a-8b2b-4061721d609c
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Metric Selector Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Selector Order'
+		isHidden
+		formatString: 0
+		lineageTag: 06332eba-aa5d-4c61-a4c6-2bec56fa3c1a
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Metric Selector' = calculated
+		mode: import
+		source =
+				{
+				    ("Total Orders", NAMEOF('_Measures'[Total Orders]), 0),
+				    ("Total Revenue", NAMEOF('_Measures'[Total Revenue]), 1),
+				    ("YoY Revenue Growth %", NAMEOF('_Measures'[YoY Revenue Growth %]), 2)
+				}
+
+	annotation PBI_Id = c03fcc04b846439b91c68e448b5b7827
+

@@ -1,0 +1,56 @@
+table DimProduct
+	lineageTag: bd73f4cd-4a49-49e8-812e-95868ca30b8f
+
+	column ProductID
+		dataType: string
+		lineageTag: 1e71a443-06cc-45e9-9dda-9d1be01612f2
+		summarizeBy: none
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		lineageTag: 0cf681ab-59b0-42ec-ab9c-9affa9236fca
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 9c016472-2f61-4844-a398-a9ba7e162fb7
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubCategory
+		dataType: string
+		lineageTag: d1eb72f6-eeed-4e66-a827-40860c5125fc
+		summarizeBy: none
+		sourceColumn: SubCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column StandardCost
+		dataType: int64
+		formatString: 0
+		lineageTag: 777ea280-27c6-49b9-b866-9a7677d87b9b
+		summarizeBy: none
+		sourceColumn: StandardCost
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimProduct = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\VVMAT\OneDrive\Documentos\entrevista_tecnica\DimProduct.csv"),[Delimiter=",", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ProductID", type text}, {"ProductName", type text}, {"Category", type text}, {"SubCategory", type text}, {"StandardCost", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

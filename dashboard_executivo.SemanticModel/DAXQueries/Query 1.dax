@@ -1,0 +1,18 @@
+// Welcome to DAX query view! Learn more about DAX queries at https://aka.ms/dax-queries.
+// Right-click on tables, columns, or measures in the data pane to access quick queries, or ask Copilot for help writing DAX.
+
+// Select "Run" to try this sample DAX query.
+EVALUATE
+SUMMARIZECOLUMNS (
+    DimDate[Year],
+    "Revenue", [Total Revenue],
+    "Orders", [Total Orders],
+    "AOV", [Average Order Value],
+    "YoY", [YoY Revenue Growth %],
+    "Color", [KPI Status Color],
+    "Cost", [Total Cost],
+    "Margin %", [Gross Margin %],
+    "Customers", [Customer Count],
+    "Orders/Customer", [Orders per Customer]
+)
+
