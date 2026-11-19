@@ -12,7 +12,7 @@ table dCliente
 
 		annotation SummarizationSetBy = User
 
-	column 'Cliente'
+	column Cliente
 		dataType: string
 		lineageTag: 88129a75-0ab8-4c14-824c-6ad29ffc0905
 		summarizeBy: none
@@ -20,7 +20,7 @@ table dCliente
 
 		annotation SummarizationSetBy = User
 
-	column 'Segmento'
+	column Segmento
 		dataType: string
 		lineageTag: cb4047ad-a211-47c3-99a5-585d7020bd48
 		summarizeBy: none
@@ -28,7 +28,7 @@ table dCliente
 
 		annotation SummarizationSetBy = User
 
-	column 'Região'
+	column Região
 		dataType: string
 		lineageTag: a32672f4-c7b6-45f6-8001-3311abd318d1
 		summarizeBy: none
@@ -36,15 +36,14 @@ table dCliente
 
 		annotation SummarizationSetBy = User
 
-	column 'País'
+	column País
 		dataType: string
-		dataCategory: Country
 		lineageTag: 34f582a5-d227-46f1-8c97-5bf98a71e313
+		dataCategory: Country
 		summarizeBy: none
 		sourceColumn: País
 
 		annotation SummarizationSetBy = User
-
 
 	partition dCliente = m
 		mode: import
@@ -59,3 +58,4 @@ table dCliente
 					TiposAlterados
 
 	annotation PBI_ResultType = Table
+

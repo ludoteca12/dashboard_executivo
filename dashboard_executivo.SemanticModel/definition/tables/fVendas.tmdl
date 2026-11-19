@@ -48,7 +48,7 @@ table fVendas
 
 		annotation SummarizationSetBy = User
 
-	column 'Quantidade'
+	column Quantidade
 		dataType: int64
 		isHidden
 		formatString: #,0
@@ -84,7 +84,6 @@ table fVendas
 
 		annotation SummarizationSetBy = User
 
-
 	partition fVendas = m
 		mode: import
 		source =
@@ -104,3 +103,4 @@ table fVendas
 					TiposAlterados
 
 	annotation PBI_ResultType = Table
+

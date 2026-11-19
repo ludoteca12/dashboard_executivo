@@ -191,7 +191,7 @@
             "type": {
               "expr": {
                 "Literal": {
-                  "Value": "'Voltar'"
+                  "Value": "'Back'"
                 }
               }
             }

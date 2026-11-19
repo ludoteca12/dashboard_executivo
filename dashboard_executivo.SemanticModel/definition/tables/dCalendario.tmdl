@@ -2,7 +2,7 @@ table dCalendario
 	lineageTag: b199c01e-d6f4-4f62-a5d7-a1126482f5fe
 	dataCategory: Time
 
-	column 'Data'
+	column Data
 		dataType: dateTime
 		isKey
 		formatString: Short Date
@@ -14,7 +14,7 @@ table dCalendario
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	column 'Ano'
+	column Ano
 		dataType: int64
 		formatString: 0
 		lineageTag: b003a11e-18dd-483c-a694-b65e4c2b253f
@@ -23,11 +23,22 @@ table dCalendario
 
 		annotation SummarizationSetBy = User
 
-	column 'Trimestre'
+	column Trimestre
 		dataType: string
 		lineageTag: 9b74ca47-19a9-4197-b0b1-ded7f5ae079e
 		summarizeBy: none
 		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = User
+
+	column Mês
+		dataType: string
+		lineageTag: 4a6ffec4-20e2-429b-b464-62df287e541d
+		summarizeBy: none
+		sourceColumn: Mês
+		sortByColumn: 'Nº Mês'
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = User
 
@@ -43,18 +54,7 @@ table dCalendario
 
 		annotation SummarizationSetBy = User
 
-	column 'Mês'
-		dataType: string
-		lineageTag: 4a6ffec4-20e2-429b-b464-62df287e541d
-		summarizeBy: none
-		sourceColumn: Mês
-		sortByColumn: 'Nº Mês'
-
-		changedProperty = SortByColumn
-
-		annotation SummarizationSetBy = User
-
-	column 'AnoMes'
+	column AnoMes
 		dataType: int64
 		isHidden
 		formatString: 0
@@ -71,7 +71,7 @@ table dCalendario
 		lineageTag: 3e9b7c15-0d4a-4f2e-8b61-c5a2d7e9f083
 		summarizeBy: none
 		sourceColumn: Mês Ano
-		sortByColumn: 'AnoMes'
+		sortByColumn: AnoMes
 
 		changedProperty = SortByColumn
 
@@ -87,7 +87,6 @@ table dCalendario
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = User
-
 
 	partition dCalendario = m
 		mode: import
@@ -112,3 +111,4 @@ table dCalendario
 					AddPeriodoComVendas
 
 	annotation PBI_ResultType = Table
+

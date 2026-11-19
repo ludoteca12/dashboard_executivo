@@ -1,4 +1,4 @@
-// Validação rápida das medidas principais por ano
+// 1) Medidas principais por ano
 EVALUATE
 SUMMARIZECOLUMNS(
     dCalendario[Ano],
@@ -7,10 +7,25 @@ SUMMARIZECOLUMNS(
     "Crescimento %", [Crescimento Receita % AA],
     "Pedidos", [Total de Pedidos],
     "Ticket Médio", [Ticket Médio],
-    "Custo", [Custo Total],
     "Margem %", [Margem Bruta %],
     "Clientes", [Clientes Ativos],
     "Pedidos/Cliente", [Pedidos por Cliente],
     "Cor KPI", [Cor Status KPI]
 )
 ORDER BY dCalendario[Ano]
+
+// 2) Conteúdo do parâmetro de campo (Métrica Campos deve apontar para '_Medidas'[...])
+EVALUATE 'Seletor de Métrica'
+
+// 3) Série mensal de 2026 das 3 métricas do seletor
+EVALUATE
+CALCULATETABLE(
+    SUMMARIZECOLUMNS(
+        dCalendario[Nº Mês], dCalendario[Mês],
+        "Pedidos", [Total de Pedidos],
+        "Receita", [Receita Total],
+        "Crescimento %", [Crescimento Receita % AA]
+    ),
+    dCalendario[Ano] = 2026
+)
+ORDER BY dCalendario[Nº Mês]

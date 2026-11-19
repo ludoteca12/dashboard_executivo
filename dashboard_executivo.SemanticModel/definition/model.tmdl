@@ -15,8 +15,11 @@ annotation PBI_QueryOrder = ["PastaDados","fnLerCsv","dCliente","dProduto","fVen
 annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
 
 ref table dCliente
+ref table dCalendario
 ref table dProduto
 ref table fVendas
-ref table dCalendario
 ref table _Medidas
 ref table 'Seletor de Métrica'
+
+ref cultureInfo en-US
+
