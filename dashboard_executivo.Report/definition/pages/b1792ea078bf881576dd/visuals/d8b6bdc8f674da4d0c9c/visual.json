@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Total Orders"
+                  "Property": "Total de Pedidos"
                 }
               },
-              "queryRef": "_Measures.Total Orders",
-              "nativeQueryRef": "Total Orders"
+              "queryRef": "_Medidas.Total de Pedidos",
+              "nativeQueryRef": "Total de Pedidos"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "_Medidas"
                   }
                 },
-                "Property": "Total Orders"
+                "Property": "Total de Pedidos"
               }
             },
             "direction": "Descending"
@@ -96,7 +96,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Total Orders"
+            "metadata": "_Medidas.Total de Pedidos"
           }
         }
       ],
@@ -112,7 +112,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Total Orders"
+            "metadata": "_Medidas.Total de Pedidos"
           }
         }
       ]
@@ -131,7 +131,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Orders'"
+                  "Value": "'Total de Pedidos'"
                 }
               }
             },

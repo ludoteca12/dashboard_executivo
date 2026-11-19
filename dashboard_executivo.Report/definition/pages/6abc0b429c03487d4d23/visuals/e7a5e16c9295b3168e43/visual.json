@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimDate"
+                      "Entity": "dCalendario"
                     }
                   },
-                  "Property": "Year"
+                  "Property": "Ano"
                 }
               },
-              "queryRef": "DimDate.Year",
-              "nativeQueryRef": "Year",
+              "queryRef": "dCalendario.Ano",
+              "nativeQueryRef": "Ano",
               "active": true
             }
           ]
@@ -80,7 +80,7 @@
                 "From": [
                   {
                     "Name": "d",
-                    "Entity": "DimDate",
+                    "Entity": "dCalendario",
                     "Type": 0
                   }
                 ],
@@ -96,7 +96,7 @@
                                   "Source": "d"
                                 }
                               },
-                              "Property": "Year"
+                              "Property": "Ano"
                             }
                           }
                         ],
@@ -199,7 +199,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Year'"
+                  "Value": "'Ano'"
                 }
               }
             },

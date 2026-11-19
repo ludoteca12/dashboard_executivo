@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimProduct"
+                      "Entity": "dProduto"
                     }
                   },
-                  "Property": "SubCategory"
+                  "Property": "Subcategoria"
                 }
               },
-              "queryRef": "DimProduct.SubCategory",
-              "nativeQueryRef": "SubCategory",
+              "queryRef": "dProduto.Subcategoria",
+              "nativeQueryRef": "Subcategoria",
               "active": true
             }
           ]
@@ -39,14 +39,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Gross Margin %"
+                  "Property": "Margem Bruta %"
                 }
               },
-              "queryRef": "_Measures.Gross Margin %",
-              "nativeQueryRef": "Gross Margin %"
+              "queryRef": "_Medidas.Margem Bruta %",
+              "nativeQueryRef": "Margem Bruta %"
             }
           ]
         }
@@ -58,10 +58,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "_Medidas"
                   }
                 },
-                "Property": "Gross Margin %"
+                "Property": "Margem Bruta %"
               }
             },
             "direction": "Ascending"
@@ -80,10 +80,10 @@
                     "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "_Measures"
+                          "Entity": "_Medidas"
                         }
                       },
-                      "Property": "Margin Band Color"
+                      "Property": "Cor Faixa Margem"
                     }
                   }
                 }

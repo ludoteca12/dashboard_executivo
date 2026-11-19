@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimProduct"
+                      "Entity": "dProduto"
                     }
                   },
-                  "Property": "Category"
+                  "Property": "Categoria"
                 }
               },
-              "queryRef": "DimProduct.Category",
-              "nativeQueryRef": "Category",
+              "queryRef": "dProduto.Categoria",
+              "nativeQueryRef": "Categoria",
               "active": true
             },
             {
@@ -35,14 +35,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimProduct"
+                      "Entity": "dProduto"
                     }
                   },
-                  "Property": "SubCategory"
+                  "Property": "Subcategoria"
                 }
               },
-              "queryRef": "DimProduct.SubCategory",
-              "nativeQueryRef": "SubCategory",
+              "queryRef": "dProduto.Subcategoria",
+              "nativeQueryRef": "Subcategoria",
               "active": true
             }
           ]
@@ -54,84 +54,84 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Total Revenue"
+                  "Property": "Receita Total"
                 }
               },
-              "queryRef": "_Measures.Total Revenue",
-              "nativeQueryRef": "Total Revenue"
+              "queryRef": "_Medidas.Receita Total",
+              "nativeQueryRef": "Receita Total"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "YoY Revenue Growth %"
+                  "Property": "Crescimento Receita % AA"
                 }
               },
-              "queryRef": "_Measures.YoY Revenue Growth %",
-              "nativeQueryRef": "YoY Revenue Growth %"
+              "queryRef": "_Medidas.Crescimento Receita % AA",
+              "nativeQueryRef": "Crescimento Receita % AA"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Gross Margin %"
+                  "Property": "Margem Bruta %"
                 }
               },
-              "queryRef": "_Measures.Gross Margin %",
-              "nativeQueryRef": "Gross Margin %"
+              "queryRef": "_Medidas.Margem Bruta %",
+              "nativeQueryRef": "Margem Bruta %"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Total Orders"
+                  "Property": "Total de Pedidos"
                 }
               },
-              "queryRef": "_Measures.Total Orders",
-              "nativeQueryRef": "Total Orders"
+              "queryRef": "_Medidas.Total de Pedidos",
+              "nativeQueryRef": "Total de Pedidos"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Revenue PY"
+                  "Property": "Receita AA"
                 }
               },
-              "queryRef": "_Measures.Revenue PY",
-              "nativeQueryRef": "Revenue PY"
+              "queryRef": "_Medidas.Receita AA",
+              "nativeQueryRef": "Receita AA"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Gross Margin"
+                  "Property": "Margem Bruta"
                 }
               },
-              "queryRef": "_Measures.Gross Margin",
-              "nativeQueryRef": "Gross Margin"
+              "queryRef": "_Medidas.Margem Bruta",
+              "nativeQueryRef": "Margem Bruta"
             }
           ]
         }
@@ -143,10 +143,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "_Medidas"
                   }
                 },
-                "Property": "YoY Revenue Growth %"
+                "Property": "Crescimento Receita % AA"
               }
             },
             "direction": "Descending"
@@ -162,17 +162,17 @@
         "levels": [
           {
             "queryRefs": [
-              "DimProduct.Category"
+              "dProduto.Categoria"
             ],
             "identityKeys": [
               {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimProduct"
+                      "Entity": "dProduto"
                     }
                   },
-                  "Property": "Category"
+                  "Property": "Categoria"
                 }
               }
             ],
@@ -180,7 +180,7 @@
           },
           {
             "queryRefs": [
-              "DimProduct.SubCategory"
+              "dProduto.Subcategoria"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -188,10 +188,10 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimProduct"
+                      "Entity": "dProduto"
                     }
                   },
-                  "Property": "SubCategory"
+                  "Property": "Subcategoria"
                 }
               }
             ],
@@ -212,10 +212,10 @@
                     "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "_Measures"
+                          "Entity": "_Medidas"
                         }
                       },
-                      "Property": "KPI Status Color"
+                      "Property": "Cor Status KPI"
                     }
                   }
                 }
@@ -230,7 +230,7 @@
                 }
               }
             ],
-            "metadata": "_Measures.YoY Revenue Growth %"
+            "metadata": "_Medidas.Crescimento Receita % AA"
           }
         },
         {
@@ -242,10 +242,10 @@
                     "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "_Measures"
+                          "Entity": "_Medidas"
                         }
                       },
-                      "Property": "Margin Band Color"
+                      "Property": "Cor Faixa Margem"
                     }
                   }
                 }
@@ -260,7 +260,7 @@
                 }
               }
             ],
-            "metadata": "_Measures.Gross Margin %"
+            "metadata": "_Medidas.Margem Bruta %"
           }
         },
         {
@@ -438,7 +438,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Total Revenue"
+            "metadata": "_Medidas.Receita Total"
           }
         },
         {
@@ -466,7 +466,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.YoY Revenue Growth %"
+            "metadata": "_Medidas.Crescimento Receita % AA"
           }
         },
         {
@@ -494,7 +494,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Gross Margin %"
+            "metadata": "_Medidas.Margem Bruta %"
           }
         },
         {
@@ -515,7 +515,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Total Orders"
+            "metadata": "_Medidas.Total de Pedidos"
           }
         },
         {
@@ -536,7 +536,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Revenue PY"
+            "metadata": "_Medidas.Receita AA"
           }
         },
         {
@@ -557,7 +557,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Gross Margin"
+            "metadata": "_Medidas.Margem Bruta"
           }
         }
       ],
@@ -573,7 +573,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Total Revenue"
+            "metadata": "_Medidas.Receita Total"
           }
         },
         {
@@ -587,7 +587,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.YoY Revenue Growth %"
+            "metadata": "_Medidas.Crescimento Receita % AA"
           }
         },
         {
@@ -601,7 +601,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Gross Margin %"
+            "metadata": "_Medidas.Margem Bruta %"
           }
         },
         {
@@ -615,7 +615,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Total Orders"
+            "metadata": "_Medidas.Total de Pedidos"
           }
         },
         {
@@ -629,7 +629,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Revenue PY"
+            "metadata": "_Medidas.Receita AA"
           }
         },
         {
@@ -643,7 +643,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Gross Margin"
+            "metadata": "_Medidas.Margem Bruta"
           }
         }
       ],
@@ -747,10 +747,10 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "DimProduct"
+                "Entity": "dProduto"
               }
             },
-            "Property": "Category"
+            "Property": "Categoria"
           }
         },
         "type": "Categorical"
@@ -761,10 +761,10 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "_Measures"
+                "Entity": "_Medidas"
               }
             },
-            "Property": "Total Revenue"
+            "Property": "Receita Total"
           }
         },
         "type": "Advanced"
@@ -775,10 +775,10 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "DimProduct"
+                "Entity": "dProduto"
               }
             },
-            "Property": "SubCategory"
+            "Property": "Subcategoria"
           }
         },
         "type": "Categorical"
@@ -789,10 +789,10 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "_Measures"
+                "Entity": "_Medidas"
               }
             },
-            "Property": "YoY Revenue Growth %"
+            "Property": "Crescimento Receita % AA"
           }
         },
         "type": "Advanced"
@@ -803,10 +803,10 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "_Measures"
+                "Entity": "_Medidas"
               }
             },
-            "Property": "Gross Margin %"
+            "Property": "Margem Bruta %"
           }
         },
         "type": "Advanced"
@@ -817,10 +817,10 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "_Measures"
+                "Entity": "_Medidas"
               }
             },
-            "Property": "Total Orders"
+            "Property": "Total de Pedidos"
           }
         },
         "type": "Advanced"
@@ -831,10 +831,10 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "_Measures"
+                "Entity": "_Medidas"
               }
             },
-            "Property": "Revenue PY"
+            "Property": "Receita AA"
           }
         },
         "type": "Advanced"
@@ -845,10 +845,10 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "_Measures"
+                "Entity": "_Medidas"
               }
             },
-            "Property": "Gross Margin"
+            "Property": "Margem Bruta"
           }
         },
         "type": "Advanced"

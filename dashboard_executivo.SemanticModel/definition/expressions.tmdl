@@ -1,0 +1,18 @@
+/// Pasta local com os CSVs gerados por scripts/gerar_dados.py (termine com \).
+expression PastaDados = "C:\Users\VVMAT\OneDrive\Documentos\portfolio\bi\dashboard_executivo\data\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 5d2c9a61-3f0e-4b7a-9c1d-2e8f6a4b7c10
+
+	annotation PBI_ResultType = Text
+
+/// Lê um CSV da PastaDados (UTF-8, separador vírgula, aspas padrão CSV) e promove o cabeçalho.
+expression fnLerCsv =
+		(nomeArquivo as text) as table =>
+		let
+			Conteudo = File.Contents(PastaDados & nomeArquivo),
+			Csv = Csv.Document(Conteudo, [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+			CabecalhoPromovido = Table.PromoteHeaders(Csv, [PromoteAllScalars = true])
+		in
+			CabecalhoPromovido
+	lineageTag: 8a4e1f27-6b3d-4c95-a0e2-7f1b9d3c5e48
+
+	annotation PBI_ResultType = Function

@@ -1,0 +1,65 @@
+table dProduto
+	lineageTag: bd73f4cd-4a49-49e8-812e-95868ca30b8f
+
+	column 'ID Produto'
+		dataType: string
+		isHidden
+		lineageTag: 1e71a443-06cc-45e9-9dda-9d1be01612f2
+		summarizeBy: none
+		sourceColumn: ID Produto
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Produto'
+		dataType: string
+		lineageTag: 0cf681ab-59b0-42ec-ab9c-9affa9236fca
+		summarizeBy: none
+		sourceColumn: Produto
+
+		annotation SummarizationSetBy = User
+
+	column 'Categoria'
+		dataType: string
+		lineageTag: 9c016472-2f61-4844-a398-a9ba7e162fb7
+		summarizeBy: none
+		sourceColumn: Categoria
+
+		annotation SummarizationSetBy = User
+
+	column 'Subcategoria'
+		dataType: string
+		lineageTag: d1eb72f6-eeed-4e66-a827-40860c5125fc
+		summarizeBy: none
+		sourceColumn: Subcategoria
+
+		annotation SummarizationSetBy = User
+
+	column 'Custo Padrão'
+		dataType: decimal
+		isHidden
+		formatString: \R\$ #,0.00;-\R\$ #,0.00;\R\$ #,0.00
+		lineageTag: 777ea280-27c6-49b9-b866-9a7677d87b9b
+		summarizeBy: none
+		sourceColumn: Custo Padrão
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+
+	partition dProduto = m
+		mode: import
+		source =
+				let
+					Fonte = fnLerCsv("dProduto.csv"),
+					TiposAlterados = Table.TransformColumnTypes(
+						Fonte,
+						{{"ID Produto", type text}, {"Produto", type text}, {"Categoria", type text}, {"Subcategoria", type text}, {"Custo Padrão", Currency.Type}},
+						"en-US"
+					)
+				in
+					TiposAlterados
+
+	annotation PBI_ResultType = Table

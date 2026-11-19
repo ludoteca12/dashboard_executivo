@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "YoY Revenue Growth %"
+                  "Property": "Crescimento Receita % AA"
                 }
               },
-              "queryRef": "_Measures.YoY Revenue Growth %",
-              "nativeQueryRef": "YoY Revenue Growth %"
+              "queryRef": "_Medidas.Crescimento Receita % AA",
+              "nativeQueryRef": "Crescimento Receita % AA"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "_Medidas"
                   }
                 },
-                "Property": "YoY Revenue Growth %"
+                "Property": "Crescimento Receita % AA"
               }
             },
             "direction": "Descending"
@@ -82,7 +82,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.YoY Revenue Growth %"
+            "metadata": "_Medidas.Crescimento Receita % AA"
           }
         },
         {
@@ -115,10 +115,10 @@
                     "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "_Measures"
+                          "Entity": "_Medidas"
                         }
                       },
-                      "Property": "KPI Status Color"
+                      "Property": "Cor Status KPI"
                     }
                   }
                 }
@@ -133,7 +133,7 @@
                 }
               }
             ],
-            "metadata": "_Measures.YoY Revenue Growth %"
+            "metadata": "_Medidas.Crescimento Receita % AA"
           }
         }
       ],
@@ -149,7 +149,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.YoY Revenue Growth %"
+            "metadata": "_Medidas.Crescimento Receita % AA"
           }
         }
       ],
@@ -165,7 +165,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.YoY Revenue Growth %"
+            "metadata": "_Medidas.Crescimento Receita % AA"
           }
         },
         {
@@ -177,10 +177,10 @@
                     "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "_Measures"
+                          "Entity": "_Medidas"
                         }
                       },
-                      "Property": "KPI Status Color"
+                      "Property": "Cor Status KPI"
                     }
                   }
                 }
@@ -195,7 +195,7 @@
                 }
               }
             ],
-            "metadata": "_Measures.YoY Revenue Growth %"
+            "metadata": "_Medidas.Crescimento Receita % AA"
           }
         }
       ]
@@ -220,7 +220,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'YoY Revenue Growth'"
+                  "Value": "'Crescimento vs Ano Anterior'"
                 }
               }
             },

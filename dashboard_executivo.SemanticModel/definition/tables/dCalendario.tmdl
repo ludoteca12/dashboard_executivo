@@ -1,0 +1,114 @@
+table dCalendario
+	lineageTag: b199c01e-d6f4-4f62-a5d7-a1126482f5fe
+	dataCategory: Time
+
+	column 'Data'
+		dataType: dateTime
+		isKey
+		formatString: Short Date
+		lineageTag: 13c59611-8db2-48c2-b4f4-187555fae07a
+		summarizeBy: none
+		sourceColumn: Data
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Ano'
+		dataType: int64
+		formatString: 0
+		lineageTag: b003a11e-18dd-483c-a694-b65e4c2b253f
+		summarizeBy: none
+		sourceColumn: Ano
+
+		annotation SummarizationSetBy = User
+
+	column 'Trimestre'
+		dataType: string
+		lineageTag: 9b74ca47-19a9-4197-b0b1-ded7f5ae079e
+		summarizeBy: none
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = User
+
+	column 'Nº Mês'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: da4b6c26-4b20-4a29-857a-76491f16a366
+		summarizeBy: none
+		sourceColumn: Nº Mês
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Mês'
+		dataType: string
+		lineageTag: 4a6ffec4-20e2-429b-b464-62df287e541d
+		summarizeBy: none
+		sourceColumn: Mês
+		sortByColumn: 'Nº Mês'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = User
+
+	column 'AnoMes'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a71ae38c-477d-4bb0-8d08-ec9314037ac6
+		summarizeBy: none
+		sourceColumn: AnoMes
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Mês Ano'
+		dataType: string
+		lineageTag: 3e9b7c15-0d4a-4f2e-8b61-c5a2d7e9f083
+		summarizeBy: none
+		sourceColumn: Mês Ano
+		sortByColumn: 'AnoMes'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = User
+
+	column 'Período com Vendas'
+		dataType: boolean
+		isHidden
+		lineageTag: c7d18e42-95ab-4e3f-b2c6-1a8f04d6e95b
+		summarizeBy: none
+		sourceColumn: Período com Vendas
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+
+	partition dCalendario = m
+		mode: import
+		source =
+				let
+					// Calendário de anos completos, do 1º ao último ano com vendas na fato
+					PrimeiraVenda = List.Min(fVendas[#"Data Pedido"]),
+					UltimaVenda = List.Max(fVendas[#"Data Pedido"]),
+					DataInicial = #date(Date.Year(PrimeiraVenda), 1, 1),
+					DataFinal = #date(Date.Year(UltimaVenda), 12, 31),
+					ListaDatas = List.Dates(DataInicial, Duration.Days(DataFinal - DataInicial) + 1, #duration(1, 0, 0, 0)),
+					NomesMeses = {"Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"},
+					Calendario = Table.FromList(ListaDatas, Splitter.SplitByNothing(), type table [Data = date]),
+					AddAno = Table.AddColumn(Calendario, "Ano", each Date.Year([Data]), Int64.Type),
+					AddTrimestre = Table.AddColumn(AddAno, "Trimestre", each "T" & Text.From(Date.QuarterOfYear([Data])), type text),
+					AddNumMes = Table.AddColumn(AddTrimestre, "Nº Mês", each Date.Month([Data]), Int64.Type),
+					AddMes = Table.AddColumn(AddNumMes, "Mês", each NomesMeses{[#"Nº Mês"] - 1}, type text),
+					AddAnoMes = Table.AddColumn(AddMes, "AnoMes", each [Ano] * 100 + [#"Nº Mês"], Int64.Type),
+					AddMesAno = Table.AddColumn(AddAnoMes, "Mês Ano", each [#"Mês"] & "/" & Text.End(Text.From([Ano]), 2), type text),
+					AddPeriodoComVendas = Table.AddColumn(AddMesAno, "Período com Vendas", each [Data] <= UltimaVenda, type logical)
+				in
+					AddPeriodoComVendas
+
+	annotation PBI_ResultType = Table

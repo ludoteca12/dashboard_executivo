@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimCustomer"
+                      "Entity": "dCliente"
                     }
                   },
-                  "Property": "Region"
+                  "Property": "Região"
                 }
               },
-              "queryRef": "DimCustomer.Region",
-              "nativeQueryRef": "Region",
+              "queryRef": "dCliente.Região",
+              "nativeQueryRef": "Região",
               "active": true
             }
           ]
@@ -157,7 +157,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Region'"
+                  "Value": "'Região'"
                 }
               }
             },

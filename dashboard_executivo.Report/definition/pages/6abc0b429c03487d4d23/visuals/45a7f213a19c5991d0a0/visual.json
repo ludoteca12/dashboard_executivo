@@ -98,7 +98,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Back to Summary'"
+                  "Value": "'Voltar ao Resumo'"
                 }
               }
             },
@@ -191,7 +191,7 @@
             "type": {
               "expr": {
                 "Literal": {
-                  "Value": "'Back'"
+                  "Value": "'Voltar'"
                 }
               }
             }
@@ -211,7 +211,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Back to Summary'"
+                  "Value": "'Voltar ao Resumo'"
                 }
               }
             }

@@ -1,0 +1,106 @@
+table fVendas
+	lineageTag: 0ae4ae36-2cbd-4bdd-a9bf-c82d90016260
+
+	column 'ID Venda'
+		dataType: string
+		isHidden
+		lineageTag: 19693c94-3ff9-4bc5-8362-0b80e1d7e545
+		summarizeBy: none
+		sourceColumn: ID Venda
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Data Pedido'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 4dfa2fc4-d5b5-488b-9ad8-78942394734a
+		summarizeBy: none
+		sourceColumn: Data Pedido
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'ID Cliente'
+		dataType: string
+		isHidden
+		lineageTag: 017c52a8-7531-4603-b1c6-351557245bdd
+		summarizeBy: none
+		sourceColumn: ID Cliente
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'ID Produto'
+		dataType: string
+		isHidden
+		lineageTag: 6c45a87a-4912-4ad1-aa69-bdcad4f0cc54
+		summarizeBy: none
+		sourceColumn: ID Produto
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Quantidade'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 7928b34b-739e-4146-b998-bfbd59e8f70b
+		summarizeBy: none
+		sourceColumn: Quantidade
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Preço Unitário'
+		dataType: decimal
+		isHidden
+		formatString: \R\$ #,0.00;-\R\$ #,0.00;\R\$ #,0.00
+		lineageTag: 4b85564f-c62e-4e25-8683-ca1b6435111c
+		summarizeBy: none
+		sourceColumn: Preço Unitário
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Valor Desconto'
+		dataType: decimal
+		isHidden
+		formatString: \R\$ #,0.00;-\R\$ #,0.00;\R\$ #,0.00
+		lineageTag: e755f6e1-4270-41fe-9c58-e0f9f12d5627
+		summarizeBy: none
+		sourceColumn: Valor Desconto
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+
+	partition fVendas = m
+		mode: import
+		source =
+				let
+					Fonte = fnLerCsv("fVendas.csv"),
+					TiposAlterados = Table.TransformColumnTypes(
+						Fonte,
+						{
+							{"ID Venda", type text}, {"Data Pedido", type date},
+							{"ID Cliente", type text}, {"ID Produto", type text},
+							{"Quantidade", Int64.Type},
+							{"Preço Unitário", Currency.Type}, {"Valor Desconto", Currency.Type}
+						},
+						"en-US"
+					)
+				in
+					TiposAlterados
+
+	annotation PBI_ResultType = Table

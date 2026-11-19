@@ -44,10 +44,10 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Drill Title"
+                  "Property": "Título Detalhamento"
                 }
               }
             },

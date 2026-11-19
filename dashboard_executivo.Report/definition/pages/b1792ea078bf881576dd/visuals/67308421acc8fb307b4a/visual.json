@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Rolling 3-Month Revenue"
+                  "Property": "Receita Móvel 3M"
                 }
               },
-              "queryRef": "_Measures.Rolling 3-Month Revenue",
-              "nativeQueryRef": "Rolling 3-Month Revenue"
+              "queryRef": "_Medidas.Receita Móvel 3M",
+              "nativeQueryRef": "Receita Móvel 3M"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "_Medidas"
                   }
                 },
-                "Property": "Rolling 3-Month Revenue"
+                "Property": "Receita Móvel 3M"
               }
             },
             "direction": "Descending"
@@ -103,7 +103,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Rolling 3-Month Revenue"
+            "metadata": "_Medidas.Receita Móvel 3M"
           }
         }
       ],
@@ -138,7 +138,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Rolling 3-Month Revenue'"
+                  "Value": "'Receita Móvel 3M'"
                 }
               }
             },

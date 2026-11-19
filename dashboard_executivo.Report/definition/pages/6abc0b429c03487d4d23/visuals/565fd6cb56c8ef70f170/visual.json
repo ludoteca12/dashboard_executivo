@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Orders Per Customer"
+                  "Property": "Pedidos por Cliente"
                 }
               },
-              "queryRef": "_Measures.Orders Per Customer",
-              "nativeQueryRef": "Orders Per Customer"
+              "queryRef": "_Medidas.Pedidos por Cliente",
+              "nativeQueryRef": "Pedidos por Cliente"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "_Medidas"
                   }
                 },
-                "Property": "Orders Per Customer"
+                "Property": "Pedidos por Cliente"
               }
             },
             "direction": "Descending"
@@ -101,7 +101,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Orders Per Customer"
+            "metadata": "_Medidas.Pedidos por Cliente"
           }
         }
       ],
@@ -142,7 +142,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Orders per Customer'"
+                  "Value": "'Pedidos por Cliente'"
                 }
               }
             },

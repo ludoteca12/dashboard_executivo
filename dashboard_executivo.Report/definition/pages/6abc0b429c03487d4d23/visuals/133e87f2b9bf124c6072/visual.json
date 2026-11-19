@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Customer Count"
+                  "Property": "Clientes Ativos"
                 }
               },
-              "queryRef": "_Measures.Customer Count",
-              "nativeQueryRef": "Customer Count"
+              "queryRef": "_Medidas.Clientes Ativos",
+              "nativeQueryRef": "Clientes Ativos"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "_Medidas"
                   }
                 },
-                "Property": "Customer Count"
+                "Property": "Clientes Ativos"
               }
             },
             "direction": "Descending"
@@ -101,7 +101,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Customer Count"
+            "metadata": "_Medidas.Clientes Ativos"
           }
         }
       ],
@@ -142,7 +142,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Customer Count'"
+                  "Value": "'Clientes Ativos'"
                 }
               }
             },

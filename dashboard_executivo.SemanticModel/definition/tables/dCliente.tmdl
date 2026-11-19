@@ -1,0 +1,61 @@
+table dCliente
+	lineageTag: b830460b-7c25-4704-9b25-b97cedd41393
+
+	column 'ID Cliente'
+		dataType: string
+		isHidden
+		lineageTag: f698d27e-cc19-4267-a62b-6718ee6a2d02
+		summarizeBy: none
+		sourceColumn: ID Cliente
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Cliente'
+		dataType: string
+		lineageTag: 88129a75-0ab8-4c14-824c-6ad29ffc0905
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		annotation SummarizationSetBy = User
+
+	column 'Segmento'
+		dataType: string
+		lineageTag: cb4047ad-a211-47c3-99a5-585d7020bd48
+		summarizeBy: none
+		sourceColumn: Segmento
+
+		annotation SummarizationSetBy = User
+
+	column 'Região'
+		dataType: string
+		lineageTag: a32672f4-c7b6-45f6-8001-3311abd318d1
+		summarizeBy: none
+		sourceColumn: Região
+
+		annotation SummarizationSetBy = User
+
+	column 'País'
+		dataType: string
+		dataCategory: Country
+		lineageTag: 34f582a5-d227-46f1-8c97-5bf98a71e313
+		summarizeBy: none
+		sourceColumn: País
+
+		annotation SummarizationSetBy = User
+
+
+	partition dCliente = m
+		mode: import
+		source =
+				let
+					Fonte = fnLerCsv("dCliente.csv"),
+					TiposAlterados = Table.TransformColumnTypes(
+						Fonte,
+						{{"ID Cliente", type text}, {"Cliente", type text}, {"Segmento", type text}, {"Região", type text}, {"País", type text}}
+					)
+				in
+					TiposAlterados
+
+	annotation PBI_ResultType = Table

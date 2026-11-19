@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimProduct"
+                      "Entity": "dProduto"
                     }
                   },
-                  "Property": "SubCategory"
+                  "Property": "Subcategoria"
                 }
               },
-              "queryRef": "DimProduct.SubCategory",
-              "nativeQueryRef": "SubCategory",
+              "queryRef": "dProduto.Subcategoria",
+              "nativeQueryRef": "Subcategoria",
               "active": true
             }
           ]
@@ -39,14 +39,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Total Revenue"
+                  "Property": "Receita Total"
                 }
               },
-              "queryRef": "_Measures.Total Revenue",
-              "nativeQueryRef": "Total Revenue"
+              "queryRef": "_Medidas.Receita Total",
+              "nativeQueryRef": "Receita Total"
             }
           ]
         }
@@ -58,10 +58,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "_Medidas"
                   }
                 },
-                "Property": "Total Revenue"
+                "Property": "Receita Total"
               }
             },
             "direction": "Descending"
@@ -139,7 +139,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Revenue by SubCategory'"
+                  "Value": "'Receita por Subcategoria'"
                 }
               }
             },

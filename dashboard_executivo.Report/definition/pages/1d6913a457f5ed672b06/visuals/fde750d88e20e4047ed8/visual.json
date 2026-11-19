@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Metric Selector"
+                      "Entity": "Seletor de Métrica"
                     }
                   },
-                  "Property": "Metric Selector"
+                  "Property": "Métrica"
                 }
               },
-              "queryRef": "Metric Selector.Metric Selector",
-              "nativeQueryRef": "Metric Selector",
+              "queryRef": "Seletor de Métrica.Métrica",
+              "nativeQueryRef": "Métrica",
               "active": true
             }
           ]
@@ -44,7 +44,7 @@
                 "From": [
                   {
                     "Name": "m",
-                    "Entity": "Metric Selector",
+                    "Entity": "Seletor de Métrica",
                     "Type": 0
                   }
                 ],
@@ -60,7 +60,7 @@
                                   "Source": "m"
                                 }
                               },
-                              "Property": "Metric Selector Fields"
+                              "Property": "Métrica Campos"
                             }
                           }
                         ],
@@ -68,7 +68,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''_Measures''[Total Orders]'"
+                                "Value": "'''_Medidas''[Total de Pedidos]'"
                               }
                             }
                           ]
@@ -82,10 +82,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Entity": "Metric Selector"
+                                  "Entity": "Seletor de Métrica"
                                 }
                               },
-                              "Property": "Metric Selector"
+                              "Property": "Métrica"
                             }
                           }
                         ],
@@ -96,7 +96,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''_Measures''[Total Orders]'"
+                                      "Value": "'''_Medidas''[Total de Pedidos]'"
                                     }
                                   }
                                 ]
@@ -109,10 +109,10 @@
                                 "Column": {
                                   "Expression": {
                                     "SourceRef": {
-                                      "Entity": "Metric Selector"
+                                      "Entity": "Seletor de Métrica"
                                     }
                                   },
-                                  "Property": "Metric Selector Fields"
+                                  "Property": "Métrica Campos"
                                 }
                               }
                             }
@@ -120,7 +120,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Total Orders"
+                            "0": "Total de Pedidos"
                           }
                         ]
                       }

@@ -1,18 +1,16 @@
-// Welcome to DAX query view! Learn more about DAX queries at https://aka.ms/dax-queries.
-// Right-click on tables, columns, or measures in the data pane to access quick queries, or ask Copilot for help writing DAX.
-
-// Select "Run" to try this sample DAX query.
+// Validação rápida das medidas principais por ano
 EVALUATE
-SUMMARIZECOLUMNS (
-    DimDate[Year],
-    "Revenue", [Total Revenue],
-    "Orders", [Total Orders],
-    "AOV", [Average Order Value],
-    "YoY", [YoY Revenue Growth %],
-    "Color", [KPI Status Color],
-    "Cost", [Total Cost],
-    "Margin %", [Gross Margin %],
-    "Customers", [Customer Count],
-    "Orders/Customer", [Orders per Customer]
+SUMMARIZECOLUMNS(
+    dCalendario[Ano],
+    "Receita", [Receita Total],
+    "Receita AA", [Receita AA],
+    "Crescimento %", [Crescimento Receita % AA],
+    "Pedidos", [Total de Pedidos],
+    "Ticket Médio", [Ticket Médio],
+    "Custo", [Custo Total],
+    "Margem %", [Margem Bruta %],
+    "Clientes", [Clientes Ativos],
+    "Pedidos/Cliente", [Pedidos por Cliente],
+    "Cor KPI", [Cor Status KPI]
 )
-
+ORDER BY dCalendario[Ano]

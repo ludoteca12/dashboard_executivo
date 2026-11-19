@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Gross Margin %"
+                  "Property": "Margem Bruta %"
                 }
               },
-              "queryRef": "_Measures.Gross Margin %",
-              "nativeQueryRef": "Gross Margin %"
+              "queryRef": "_Medidas.Margem Bruta %",
+              "nativeQueryRef": "Margem Bruta %"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "_Medidas"
                   }
                 },
-                "Property": "Gross Margin %"
+                "Property": "Margem Bruta %"
               }
             },
             "direction": "Descending"
@@ -83,10 +83,10 @@
                     "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "_Measures"
+                          "Entity": "_Medidas"
                         }
                       },
-                      "Property": "Margin Band Color"
+                      "Property": "Cor Faixa Margem"
                     }
                   }
                 }
@@ -101,7 +101,7 @@
                 }
               }
             ],
-            "metadata": "_Measures.Gross Margin %"
+            "metadata": "_Medidas.Margem Bruta %"
           }
         }
       ],
@@ -131,7 +131,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Gross Margin %"
+            "metadata": "_Medidas.Margem Bruta %"
           }
         }
       ],
@@ -172,7 +172,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Gross Margin %'"
+                  "Value": "'Margem Bruta %'"
                 }
               }
             },

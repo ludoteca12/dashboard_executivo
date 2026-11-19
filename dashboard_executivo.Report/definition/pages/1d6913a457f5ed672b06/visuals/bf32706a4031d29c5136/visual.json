@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimDate"
+                      "Entity": "dCalendario"
                     }
                   },
-                  "Property": "MonthName"
+                  "Property": "Mês"
                 }
               },
-              "queryRef": "DimDate.MonthName",
-              "nativeQueryRef": "MonthName",
+              "queryRef": "dCalendario.Mês",
+              "nativeQueryRef": "Mês",
               "active": true
             }
           ]
@@ -39,15 +39,15 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Total Orders"
+                  "Property": "Total de Pedidos"
                 }
               },
-              "queryRef": "_Measures.Total Orders",
-              "nativeQueryRef": "Total Orders",
-              "displayName": "Total Orders"
+              "queryRef": "_Medidas.Total de Pedidos",
+              "nativeQueryRef": "Total de Pedidos",
+              "displayName": "Total de Pedidos"
             }
           ],
           "fieldParameters": [
@@ -56,10 +56,10 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Metric Selector"
+                      "Entity": "Seletor de Métrica"
                     }
                   },
-                  "Property": "Metric Selector"
+                  "Property": "Métrica"
                 }
               },
               "index": 0,
@@ -100,10 +100,10 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Trend Title"
+                  "Property": "Título Tendência"
                 }
               }
             },

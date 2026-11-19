@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Average Order Value"
+                  "Property": "Ticket Médio"
                 }
               },
-              "queryRef": "_Measures.Average Order Value",
-              "nativeQueryRef": "Average Order Value"
+              "queryRef": "_Medidas.Ticket Médio",
+              "nativeQueryRef": "Ticket Médio"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "_Medidas"
                   }
                 },
-                "Property": "Average Order Value"
+                "Property": "Ticket Médio"
               }
             },
             "direction": "Descending"
@@ -85,7 +85,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Average Order Value"
+            "metadata": "_Medidas.Ticket Médio"
           }
         },
         {
@@ -133,7 +133,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Average Order Value"
+            "metadata": "_Medidas.Ticket Médio"
           }
         }
       ]
@@ -183,7 +183,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Average Order Value'"
+                  "Value": "'Ticket Médio'"
                 }
               }
             },

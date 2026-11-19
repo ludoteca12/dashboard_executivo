@@ -10,16 +10,13 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["DimCustomer","DimDate","DimProduct","FactSales","_Measures"]
+annotation PBI_QueryOrder = ["PastaDados","fnLerCsv","dCliente","dProduto","fVendas","dCalendario","_Medidas"]
 
 annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
 
-ref table DimCustomer
-ref table DimDate
-ref table DimProduct
-ref table FactSales
-ref table _Measures
-ref table 'Metric Selector'
-
-ref cultureInfo en-US
-
+ref table dCliente
+ref table dProduto
+ref table fVendas
+ref table dCalendario
+ref table _Medidas
+ref table 'Seletor de Métrica'

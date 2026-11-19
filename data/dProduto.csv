@@ -1,0 +1,28 @@
+ID Produto,Produto,Categoria,Subcategoria,Custo Padrão
+PRD-001,Notebook Essencial,Hardware,Notebooks,620.00
+PRD-002,Notebook Profissional,Hardware,Notebooks,1290.00
+PRD-003,Notebook Premium,Hardware,Notebooks,2180.00
+PRD-004,Monitor Essencial,Hardware,Monitores,460.00
+PRD-005,Monitor Profissional,Hardware,Monitores,990.00
+PRD-006,Monitor Premium,Hardware,Monitores,1710.00
+PRD-007,Kit de Acessórios Essencial,Hardware,Acessórios,170.00
+PRD-008,Kit de Acessórios Profissional,Hardware,Acessórios,450.00
+PRD-009,Kit de Acessórios Premium,Hardware,Acessórios,980.00
+PRD-010,Licença Nuvem Essencial,Software,Licenças em Nuvem,170.00
+PRD-011,Licença Nuvem Profissional,Software,Licenças em Nuvem,720.00
+PRD-012,Licença Nuvem Premium,Software,Licenças em Nuvem,1670.00
+PRD-013,Suíte de Segurança Essencial,Software,Suítes de Segurança,130.00
+PRD-014,Suíte de Segurança Profissional,Software,Suítes de Segurança,460.00
+PRD-015,Suíte de Segurança Premium,Software,Suítes de Segurança,1060.00
+PRD-016,Plataforma Analytics Essencial,Software,Ferramentas de Analytics,340.00
+PRD-017,Plataforma Analytics Profissional,Software,Ferramentas de Analytics,990.00
+PRD-018,Plataforma Analytics Premium,Software,Ferramentas de Analytics,1900.00
+PRD-019,Pacote de Implantação Essencial,Serviços,Implantação,1140.00
+PRD-020,Pacote de Implantação Profissional,Serviços,Implantação,1800.00
+PRD-021,Pacote de Implantação Premium,Serviços,Implantação,2470.00
+PRD-022,Serviço Gerenciado Essencial,Serviços,Serviços Gerenciados,1480.00
+PRD-023,Serviço Gerenciado Profissional,Serviços,Serviços Gerenciados,2090.00
+PRD-024,Serviço Gerenciado Premium,Serviços,Serviços Gerenciados,2720.00
+PRD-025,Consultoria Essencial,Serviços,Consultoria,570.00
+PRD-026,Consultoria Profissional,Serviços,Consultoria,1240.00
+PRD-027,Consultoria Premium,Serviços,Consultoria,1900.00

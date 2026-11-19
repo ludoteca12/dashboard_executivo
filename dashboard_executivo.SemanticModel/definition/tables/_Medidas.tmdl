@@ -1,0 +1,170 @@
+table _Medidas
+	lineageTag: 93f0b4bf-5d7b-4014-b3d2-3593aba04e21
+
+	/// Quantidade x preço unitário, antes de descontos.
+	measure 'Receita Bruta' =
+			SUMX(
+				fVendas,
+				fVendas[Quantidade] * fVendas[Preço Unitário]
+			)
+		formatString: \R\$ #,0;-\R\$ #,0;\R\$ #,0
+		displayFolder: Receita
+		lineageTag: fe3f6ae1-f3bc-44e9-9324-be615d7be578
+
+	/// Receita líquida de descontos. Medida base do relatório.
+	measure 'Receita Total' =
+			[Receita Bruta] - SUM(fVendas[Valor Desconto])
+		formatString: \R\$ #,0;-\R\$ #,0;\R\$ #,0
+		displayFolder: Receita
+		lineageTag: a463d1f2-df11-47ef-9c45-4cbfffc9c0d9
+
+	/// Receita do mesmo período no ano anterior, considerando apenas datas com vendas (evita comparar ano parcial com ano cheio).
+	measure 'Receita AA' =
+			CALCULATE(
+				[Receita Total],
+				CALCULATETABLE(
+					SAMEPERIODLASTYEAR(dCalendario[Data]),
+					dCalendario[Período com Vendas] = TRUE()
+				)
+			)
+		formatString: \R\$ #,0;-\R\$ #,0;\R\$ #,0
+		displayFolder: Receita
+		lineageTag: 8dce67f1-bcfe-4243-b06b-bec570a6ec67
+
+	/// Variação % da receita vs. ano anterior. Sem um ano único no contexto, compara o ano mais recente visível.
+	measure 'Crescimento Receita % AA' =
+			VAR _AnoRef = MAX(dCalendario[Ano])
+			VAR _ReceitaAtual = CALCULATE([Receita Total], dCalendario[Ano] = _AnoRef)
+			VAR _ReceitaAA = CALCULATE([Receita AA], dCalendario[Ano] = _AnoRef)
+			RETURN
+				IF(
+					NOT ISBLANK(_ReceitaAtual) && NOT ISBLANK(_ReceitaAA),
+					DIVIDE(_ReceitaAtual - _ReceitaAA, _ReceitaAA)
+				)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Receita
+		lineageTag: ca2699ea-38d9-4b2d-b779-9333ebde5ffc
+
+	/// Receita dos últimos 3 meses até a data final do contexto, limitada à data da última venda.
+	measure 'Receita Móvel 3M' =
+			VAR _UltimaVenda = CALCULATE(MAX(fVendas[Data Pedido]), REMOVEFILTERS())
+			VAR _DataFim = MIN(MAX(dCalendario[Data]), _UltimaVenda)
+			RETURN
+				CALCULATE(
+					[Receita Total],
+					DATESINPERIOD(dCalendario[Data], _DataFim, -3, MONTH)
+				)
+		formatString: \R\$ #,0;-\R\$ #,0;\R\$ #,0
+		displayFolder: Receita
+		lineageTag: 471f405d-89b8-48ed-a570-3a72037c2d7d
+
+	/// Nº de vendas (cada linha da fato é um pedido).
+	measure 'Total de Pedidos' =
+			COUNTROWS(fVendas)
+		formatString: #,0
+		displayFolder: Pedidos
+		lineageTag: 37f39088-cb53-4872-a8a4-29da4b556f4c
+
+	/// Receita média por pedido.
+	measure 'Ticket Médio' =
+			DIVIDE([Receita Total], [Total de Pedidos])
+		formatString: \R\$ #,0;-\R\$ #,0;\R\$ #,0
+		displayFolder: Pedidos
+		lineageTag: aa536353-3ae7-4ce1-aece-08beeac91d2e
+
+	/// Média de pedidos por cliente ativo no período.
+	measure 'Pedidos por Cliente' =
+			DIVIDE([Total de Pedidos], [Clientes Ativos])
+		formatString: #,0.0
+		displayFolder: Pedidos
+		lineageTag: 73ccc3f4-cac1-4c0b-b73f-835a65a735e9
+
+	/// Clientes distintos com pelo menos uma compra no contexto.
+	measure 'Clientes Ativos' =
+			DISTINCTCOUNT(fVendas[ID Cliente])
+		formatString: #,0
+		displayFolder: Clientes
+		lineageTag: 9494101c-e398-4841-af0f-d5862ee555f7
+
+	/// Quantidade x custo padrão do produto.
+	measure 'Custo Total' =
+			SUMX(
+				fVendas,
+				fVendas[Quantidade] * RELATED(dProduto[Custo Padrão])
+			)
+		formatString: \R\$ #,0;-\R\$ #,0;\R\$ #,0
+		displayFolder: Custo e Margem
+		lineageTag: 28612ba9-6d1e-4f95-86cd-621fa3fad3a7
+
+	/// Receita Total - Custo Total.
+	measure 'Margem Bruta' =
+			[Receita Total] - [Custo Total]
+		formatString: \R\$ #,0;-\R\$ #,0;\R\$ #,0
+		displayFolder: Custo e Margem
+		lineageTag: 7078f44c-4d72-4b49-a439-f155de9ede24
+
+	/// Margem Bruta / Receita Total.
+	measure 'Margem Bruta %' =
+			DIVIDE([Margem Bruta], [Receita Total])
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Custo e Margem
+		lineageTag: d0d5552e-c74b-4fa3-9507-8fa84630bd9a
+
+	/// Cor do KPI de crescimento: verde (positivo), vermelho (negativo), cinza (sem comparação).
+	measure 'Cor Status KPI' =
+			VAR _Crescimento = [Crescimento Receita % AA]
+			RETURN
+				SWITCH(
+					TRUE(),
+					ISBLANK(_Crescimento), "#6B778C",
+					_Crescimento > 0, "#00875A",
+					_Crescimento < 0, "#DE350B",
+					"#6B778C"
+				)
+		displayFolder: Auxiliares\Cores
+		lineageTag: 3b1dc8a3-69cc-4a1f-be41-06d5ceab45f7
+
+	/// Cor da faixa de margem: verde se atinge a meta de margem bruta (10%), senão vermelho.
+	measure 'Cor Faixa Margem' =
+			VAR _MetaMargem = 0.10
+			VAR _Margem = [Margem Bruta %]
+			RETURN
+				SWITCH(
+					TRUE(),
+					ISBLANK(_Margem), "#6B778C",
+					_Margem >= _MetaMargem, "#00875A",
+					"#DE350B"
+				)
+		displayFolder: Auxiliares\Cores
+		lineageTag: 0fb68984-e189-4923-b53f-022fd88dd764
+
+	/// Título dinâmico do gráfico de tendência, conforme a métrica escolhida no seletor.
+	measure 'Título Tendência' =
+			VAR _Metrica = SELECTEDVALUE('Seletor de Métrica'[Métrica])
+			RETURN
+				IF(ISBLANK(_Metrica), "Tendência Mensal", _Metrica & " por Mês")
+		displayFolder: Auxiliares\Títulos
+		lineageTag: 170f3f0c-bb4f-47ec-a7f2-c684aa0f1b8c
+
+	/// Título dinâmico da página de detalhamento (drillthrough).
+	measure 'Título Detalhamento' =
+			VAR _Segmento = SELECTEDVALUE(dCliente[Segmento], "Todos os Segmentos")
+			VAR _Categoria = SELECTEDVALUE(dProduto[Categoria], "Todas as Categorias")
+			VAR _Subcategoria = SELECTEDVALUE(dProduto[Subcategoria])
+			RETURN
+				"Detalhamento: " & _Segmento & "  |  " & _Categoria
+					& IF(NOT ISBLANK(_Subcategoria), " › " & _Subcategoria)
+		displayFolder: Auxiliares\Títulos
+		lineageTag: b5c0690c-ac23-481a-a419-791b43e2a70b
+
+	partition _Medidas = m
+		mode: import
+		source =
+				let
+					Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+					#"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+					#"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+					#"Removed Columns"
+
+	annotation PBI_ResultType = Table

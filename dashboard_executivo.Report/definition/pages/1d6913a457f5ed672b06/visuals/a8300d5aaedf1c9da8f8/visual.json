@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimCustomer"
+                      "Entity": "dCliente"
                     }
                   },
-                  "Property": "CustomerSegment"
+                  "Property": "Segmento"
                 }
               },
-              "queryRef": "DimCustomer.CustomerSegment",
-              "nativeQueryRef": "CustomerSegment",
+              "queryRef": "dCliente.Segmento",
+              "nativeQueryRef": "Segmento",
               "active": true
             }
           ]
@@ -39,14 +39,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Total Revenue"
+                  "Property": "Receita Total"
                 }
               },
-              "queryRef": "_Measures.Total Revenue",
-              "nativeQueryRef": "Total Revenue"
+              "queryRef": "_Medidas.Receita Total",
+              "nativeQueryRef": "Receita Total"
             }
           ]
         }
@@ -58,10 +58,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "_Medidas"
                   }
                 },
-                "Property": "Total Revenue"
+                "Property": "Receita Total"
               }
             },
             "direction": "Descending"
@@ -139,7 +139,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Revenue by Customer Segment'"
+                  "Value": "'Receita por Segmento'"
                 }
               }
             }

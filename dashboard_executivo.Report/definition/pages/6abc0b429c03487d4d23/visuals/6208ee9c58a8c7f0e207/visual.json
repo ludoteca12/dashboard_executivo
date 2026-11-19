@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimCustomer"
+                      "Entity": "dCliente"
                     }
                   },
-                  "Property": "Region"
+                  "Property": "Região"
                 }
               },
-              "queryRef": "DimCustomer.Region",
-              "nativeQueryRef": "Region",
+              "queryRef": "dCliente.Região",
+              "nativeQueryRef": "Região",
               "active": true
             },
             {
@@ -35,14 +35,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimCustomer"
+                      "Entity": "dCliente"
                     }
                   },
-                  "Property": "Country"
+                  "Property": "País"
                 }
               },
-              "queryRef": "DimCustomer.Country",
-              "nativeQueryRef": "Country",
+              "queryRef": "dCliente.País",
+              "nativeQueryRef": "País",
               "active": true
             },
             {
@@ -50,14 +50,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimCustomer"
+                      "Entity": "dCliente"
                     }
                   },
-                  "Property": "CustomerName"
+                  "Property": "Cliente"
                 }
               },
-              "queryRef": "DimCustomer.CustomerName",
-              "nativeQueryRef": "CustomerName",
+              "queryRef": "dCliente.Cliente",
+              "nativeQueryRef": "Cliente",
               "active": true
             }
           ]
@@ -69,70 +69,70 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Total Orders"
+                  "Property": "Total de Pedidos"
                 }
               },
-              "queryRef": "_Measures.Total Orders",
-              "nativeQueryRef": "Total Orders"
+              "queryRef": "_Medidas.Total de Pedidos",
+              "nativeQueryRef": "Total de Pedidos"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Total Revenue"
+                  "Property": "Receita Total"
                 }
               },
-              "queryRef": "_Measures.Total Revenue",
-              "nativeQueryRef": "Total Revenue"
+              "queryRef": "_Medidas.Receita Total",
+              "nativeQueryRef": "Receita Total"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Average Order Value"
+                  "Property": "Ticket Médio"
                 }
               },
-              "queryRef": "_Measures.Average Order Value",
-              "nativeQueryRef": "Average Order Value"
+              "queryRef": "_Medidas.Ticket Médio",
+              "nativeQueryRef": "Ticket Médio"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Gross Margin"
+                  "Property": "Margem Bruta"
                 }
               },
-              "queryRef": "_Measures.Gross Margin",
-              "nativeQueryRef": "Gross Margin"
+              "queryRef": "_Medidas.Margem Bruta",
+              "nativeQueryRef": "Margem Bruta"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Gross Margin %"
+                  "Property": "Margem Bruta %"
                 }
               },
-              "queryRef": "_Measures.Gross Margin %",
-              "nativeQueryRef": "Gross Margin %"
+              "queryRef": "_Medidas.Margem Bruta %",
+              "nativeQueryRef": "Margem Bruta %"
             }
           ]
         }
@@ -144,10 +144,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "_Medidas"
                   }
                 },
-                "Property": "Total Revenue"
+                "Property": "Receita Total"
               }
             },
             "direction": "Descending"
@@ -163,17 +163,17 @@
         "levels": [
           {
             "queryRefs": [
-              "DimCustomer.Region"
+              "dCliente.Região"
             ],
             "identityKeys": [
               {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimCustomer"
+                      "Entity": "dCliente"
                     }
                   },
-                  "Property": "Region"
+                  "Property": "Região"
                 }
               }
             ],
@@ -181,13 +181,13 @@
           },
           {
             "queryRefs": [
-              "DimCustomer.Country"
+              "dCliente.País"
             ],
             "isPinned": true
           },
           {
             "queryRefs": [
-              "DimCustomer.CustomerName"
+              "dCliente.Cliente"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -207,10 +207,10 @@
                     "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "_Measures"
+                          "Entity": "_Medidas"
                         }
                       },
-                      "Property": "Margin Band Color"
+                      "Property": "Cor Faixa Margem"
                     }
                   }
                 }
@@ -225,7 +225,7 @@
                 }
               }
             ],
-            "metadata": "_Measures.Gross Margin %"
+            "metadata": "_Medidas.Margem Bruta %"
           }
         },
         {
@@ -315,7 +315,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Total Revenue"
+            "metadata": "_Medidas.Receita Total"
           }
         },
         {
@@ -336,7 +336,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Gross Margin"
+            "metadata": "_Medidas.Margem Bruta"
           }
         },
         {
@@ -357,7 +357,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Total Orders"
+            "metadata": "_Medidas.Total de Pedidos"
           }
         },
         {
@@ -378,7 +378,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Average Order Value"
+            "metadata": "_Medidas.Ticket Médio"
           }
         },
         {
@@ -399,7 +399,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Gross Margin %"
+            "metadata": "_Medidas.Margem Bruta %"
           }
         }
       ],
@@ -454,7 +454,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Total Orders"
+            "metadata": "_Medidas.Total de Pedidos"
           }
         },
         {
@@ -468,7 +468,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Total Revenue"
+            "metadata": "_Medidas.Receita Total"
           }
         },
         {
@@ -482,7 +482,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Average Order Value"
+            "metadata": "_Medidas.Ticket Médio"
           }
         },
         {
@@ -496,7 +496,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Gross Margin"
+            "metadata": "_Medidas.Margem Bruta"
           }
         },
         {
@@ -510,7 +510,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Gross Margin %"
+            "metadata": "_Medidas.Margem Bruta %"
           }
         }
       ]

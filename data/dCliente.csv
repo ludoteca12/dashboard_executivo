@@ -1,0 +1,101 @@
+ID Cliente,Cliente,Segmento,Região,País
+CLI-0001,Ulton Tecnologia,PME,América Latina,Brasil
+CLI-0002,Evvix Logística,PME,América Latina,Brasil
+CLI-0003,Corro Energia,Corporativo,América Latina,Brasil
+CLI-0004,Helnis Telecom,Corporativo,América Latina,Brasil
+CLI-0005,Ulvix Financeira,PME,América Latina,Brasil
+CLI-0006,Ixva Varejo,PME,América Latina,Brasil
+CLI-0007,Evlix Alimentos,Corporativo,América Latina,Brasil
+CLI-0008,Lumex Telecom,Corporativo,América Latina,Brasil
+CLI-0009,Ornis Logística,Consumidor,América Latina,Brasil
+CLI-0010,Ridora Construtora,PME,América Latina,Brasil
+CLI-0011,Sollix Agro,Corporativo,América Latina,Brasil
+CLI-0012,Junton Saúde,Consumidor,América Latina,Brasil
+CLI-0013,Orena Alimentos,Corporativo,América Latina,Chile
+CLI-0014,Verdora Agro,Consumidor,América Latina,Chile
+CLI-0015,Tavena Varejo,PME,América Latina,Chile
+CLI-0016,Ortia Engenharia,Consumidor,América Latina,Chile
+CLI-0017,Rilix Construtora,PME,América Latina,Chile
+CLI-0018,Bralix Tecnologia,Consumidor,América Latina,Chile
+CLI-0019,Corlix Telecom,Consumidor,América Latina,Chile
+CLI-0020,Ulquia Energia,Consumidor,América Latina,Chile
+CLI-0021,Evdora Varejo,Corporativo,América Latina,Chile
+CLI-0022,Ixvix Telecom,PME,América Latina,Chile
+CLI-0023,Lulix Varejo,PME,América Latina,Chile
+CLI-0024,Braton Varejo,PME,América Latina,Chile
+CLI-0025,Norro Logística,PME,América Latina,Chile
+CLI-0026,Ornis Engenharia,Consumidor,América Latina,Chile
+CLI-0027,Alena Agro,Corporativo,América Latina,Colômbia
+CLI-0028,Ixena Alimentos,Corporativo,América Latina,Colômbia
+CLI-0029,Orva Agro,Consumidor,América Latina,Colômbia
+CLI-0030,Quanris Financeira,Consumidor,América Latina,Colômbia
+CLI-0031,Junena Financeira,PME,América Latina,Colômbia
+CLI-0032,Fanis Financeira,Consumidor,América Latina,Colômbia
+CLI-0033,Prava Logística,Consumidor,América Latina,Colômbia
+CLI-0034,Junlix Tecnologia,Corporativo,América Latina,Colômbia
+CLI-0035,Corton Agro,PME,América Latina,Colômbia
+CLI-0036,Riris Varejo,PME,América Latina,Colômbia
+CLI-0037,Fadora Financeira,Consumidor,América Latina,Colômbia
+CLI-0038,Granis Agro,PME,América Latina,Colômbia
+CLI-0039,Marena Construtora,PME,América Latina,Colômbia
+CLI-0040,Orton Saúde,Corporativo,América Latina,Colômbia
+CLI-0041,Solnis Saúde,PME,América Latina,Argentina
+CLI-0042,Xaena Tecnologia,Corporativo,América Latina,Argentina
+CLI-0043,Kalton Financeira,Corporativo,América Latina,Argentina
+CLI-0044,Granis Varejo,PME,América Latina,Argentina
+CLI-0045,Solquia Saúde,PME,América Latina,Argentina
+CLI-0046,Graton Logística,PME,América Latina,Argentina
+CLI-0047,Norquia Agro,Corporativo,América Latina,Argentina
+CLI-0048,Marvix Alimentos,Consumidor,América Latina,Argentina
+CLI-0049,Gralix Financeira,PME,América Latina,México
+CLI-0050,Ixquia Saúde,Consumidor,América Latina,México
+CLI-0051,Riton Tecnologia,PME,América Latina,México
+CLI-0052,Alton Saúde,Corporativo,América Latina,México
+CLI-0053,Gratia Tecnologia,Corporativo,América Latina,México
+CLI-0054,Mardora Educação,PME,América Latina,México
+CLI-0055,Zennis Construtora,PME,América Latina,México
+CLI-0056,Solvix Financeira,Corporativo,América Latina,México
+CLI-0057,Braro Educação,PME,América Latina,México
+CLI-0058,Fava Financeira,Corporativo,América do Norte,Estados Unidos
+CLI-0059,Tavton Construtora,Consumidor,América do Norte,Estados Unidos
+CLI-0060,Sollix Telecom,PME,América do Norte,Estados Unidos
+CLI-0061,Norena Telecom,PME,América do Norte,Estados Unidos
+CLI-0062,Ixlix Construtora,PME,América do Norte,Estados Unidos
+CLI-0063,Marris Construtora,PME,América do Norte,Estados Unidos
+CLI-0064,Corva Educação,PME,América do Norte,Estados Unidos
+CLI-0065,Delton Financeira,Corporativo,América do Norte,Estados Unidos
+CLI-0066,Luton Saúde,PME,América do Norte,Estados Unidos
+CLI-0067,Rivix Engenharia,PME,América do Norte,Estados Unidos
+CLI-0068,Ulnis Tecnologia,PME,América do Norte,Canadá
+CLI-0069,Verton Varejo,Corporativo,América do Norte,Canadá
+CLI-0070,Zennis Varejo,Corporativo,América do Norte,Canadá
+CLI-0071,Xamex Saúde,PME,América do Norte,Canadá
+CLI-0072,Quanquia Engenharia,Consumidor,América do Norte,Canadá
+CLI-0073,Corena Energia,Consumidor,América do Norte,Canadá
+CLI-0074,Kalris Construtora,Consumidor,América do Norte,Canadá
+CLI-0075,Ornis Agro,PME,América do Norte,Canadá
+CLI-0076,Corvix Varejo,PME,América do Norte,Canadá
+CLI-0077,Solnis Varejo,PME,América do Norte,Canadá
+CLI-0078,Luva Alimentos,Corporativo,América do Norte,Canadá
+CLI-0079,Delmex Financeira,Consumidor,América do Norte,Canadá
+CLI-0080,Tavvix Varejo,Consumidor,América do Norte,Canadá
+CLI-0081,Faris Energia,Corporativo,Europa,Espanha
+CLI-0082,Kaltia Construtora,Consumidor,Europa,Espanha
+CLI-0083,Ixris Agro,Corporativo,Europa,Espanha
+CLI-0084,Pralix Saúde,Consumidor,Europa,Espanha
+CLI-0085,Junlix Saúde,Corporativo,Europa,Espanha
+CLI-0086,Kaldora Logística,Consumidor,Europa,Espanha
+CLI-0087,Ulnis Energia,PME,Europa,Espanha
+CLI-0088,Kalva Logística,Consumidor,Europa,Reino Unido
+CLI-0089,Soldora Tecnologia,Corporativo,Europa,Reino Unido
+CLI-0090,Zenmex Energia,PME,Europa,Reino Unido
+CLI-0091,Marro Saúde,Corporativo,Europa,Reino Unido
+CLI-0092,Alnis Financeira,PME,Europa,Reino Unido
+CLI-0093,Zenena Saúde,PME,Europa,Reino Unido
+CLI-0094,Vermex Telecom,PME,Europa,França
+CLI-0095,Zendora Financeira,PME,Europa,França
+CLI-0096,Marvix Engenharia,PME,Europa,França
+CLI-0097,Vertia Construtora,PME,Europa,França
+CLI-0098,Soldora Energia,PME,Europa,França
+CLI-0099,Junlix Energia,PME,Europa,Alemanha
+CLI-0100,Kalquia Educação,PME,Europa,Alemanha
