@@ -132,10 +132,17 @@ table _Medidas
 		lineageTag: 0fb68984-e189-4923-b53f-022fd88dd764
 
 	/// Título dinâmico do gráfico de tendência, conforme a métrica escolhida no seletor.
+	/// Usa a coluna de ordem: [Métrica] tem chave composta com [Métrica Campos] e não pode ser lida isoladamente.
 	measure 'Título Tendência' =
-			VAR _Metrica = SELECTEDVALUE('Seletor de Métrica'[Métrica])
+			VAR _Ordem = SELECTEDVALUE('Seletor de Métrica'[Métrica Ordem])
 			RETURN
-				IF(ISBLANK(_Metrica), "Tendência Mensal", _Metrica & " por Mês")
+				SWITCH(
+					_Ordem,
+					0, "Total de Pedidos por Mês",
+					1, "Receita Total por Mês",
+					2, "Crescimento Receita % AA por Mês",
+					"Tendência Mensal"
+				)
 		displayFolder: Auxiliares\Títulos
 		lineageTag: 170f3f0c-bb4f-47ec-a7f2-c684aa0f1b8c
 
