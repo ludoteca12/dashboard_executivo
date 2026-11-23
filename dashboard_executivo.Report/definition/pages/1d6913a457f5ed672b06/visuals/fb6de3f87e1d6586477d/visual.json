@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "fb6de3f87e1d6586477d",
   "position": {
     "x": 30,
@@ -146,7 +146,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Crescimento Receita % AA"
+                "Property": "Receita Total"
               }
             },
             "direction": "Descending"
@@ -567,7 +567,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "162D"
+                  "Value": "147.13722616980002D"
                 }
               }
             }
@@ -581,7 +581,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "231D"
+                  "Value": "218.83955091535375D"
                 }
               }
             }
@@ -595,7 +595,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "162D"
+                  "Value": "145.7927695414005D"
                 }
               }
             }
@@ -623,7 +623,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "137D"
+                  "Value": "128.89303437664785D"
                 }
               }
             }
@@ -644,6 +644,20 @@
           },
           "selector": {
             "metadata": "_Medidas.Margem Bruta"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "223.053483538671D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dProduto.Categoria"
           }
         }
       ],

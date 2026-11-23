@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "fde750d88e20e4047ed8",
   "position": {
     "x": 30,
@@ -43,7 +43,7 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "m",
+                    "Name": "s",
                     "Entity": "Seletor de Métrica",
                     "Type": 0
                   }
@@ -57,7 +57,7 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "m"
+                                  "Source": "s"
                                 }
                               },
                               "Property": "Métrica Campos"
@@ -68,7 +68,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''_Medidas''[Total de Pedidos]'"
+                                "Value": "'''_Medidas''[Crescimento Receita % AA]'"
                               }
                             }
                           ]
@@ -96,7 +96,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''_Medidas''[Total de Pedidos]'"
+                                      "Value": "'''_Medidas''[Crescimento Receita % AA]'"
                                     }
                                   }
                                 ]
@@ -120,7 +120,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Total de Pedidos"
+                            "0": "Crescimento Receita % AA"
                           }
                         ]
                       }

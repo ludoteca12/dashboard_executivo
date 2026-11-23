@@ -12,10 +12,19 @@ cultureInfo en-US
 			          "ConceptualProperty": "Total de Pedidos"
 			        }
 			      },
+			      "State": "Generated"
+			    },
+			    "table_medidas.crescimento_receita__aa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Crescimento Receita % AA"
+			        }
+			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Total de Pedidos": {
+			          "Crescimento Receita % AA": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
