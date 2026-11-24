@@ -104,4 +104,4 @@ imgs/                                  # capturas de tela
 
 ---
 
-Desenvolvido por **Mateus Vieira** · Power BI · DAX · Power Query
+Desenvolvido por **Mateus Vieira** ·
