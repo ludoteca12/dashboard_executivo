@@ -2,7 +2,7 @@
 
 Relatório executivo de vendas B2B de tecnologia (Hardware, Software e Serviços) com visão consolidada de receita, pedidos, ticket médio, margem e crescimento anual, mais um detalhamento por cliente acessado via *drill-through*.
 
-O foco do projeto é **modelagem e DAX bem feitos**: modelo estrela, inteligência de tempo robusta, parâmetro de campo, formatação condicional orientada por medidas e navegação entre páginas.
+O foco do projeto é **modelagem e DAX**: modelo estrela, inteligência de tempo robusta, parâmetro de campo, formatação condicional orientada por medidas e navegação entre páginas.
 
 ![Resumo Executivo de Vendas](imgs/img_painel_executivo.PNG)
 
@@ -76,12 +76,7 @@ Também usados no projeto:
 
 ## Dados
 
-Os dados são **100% sintéticos**, gerados por [`scripts/gerar_dados.py`](scripts/gerar_dados.py) com semente fixa, ou seja, sempre o mesmo resultado. São 100 clientes fictícios, 27 produtos e 5.000 vendas entre 2024 e 2026, com:
-- sazonalidade (pico no 4º trimestre);
-- tendência diferente por subcategoria;
-- preço ligado ao custo do produto, com reajuste anual;
-- desconto variando conforme o segmento do cliente;
-- concentração de receita em poucos clientes.
+Os dados são **100% sintéticos**, gerados por [`scripts/gerar_dados.py`](scripts/gerar_dados.py) com semente fixa: 100 clientes fictícios, 27 produtos e 5.000 vendas entre 2024 e 2026, com sazonalidade, tendência por subcategoria, reajuste anual de preço, desconto por segmento e concentração de receita em poucos clientes.
 
 ## Como abrir
 
@@ -104,4 +99,4 @@ imgs/                                  # capturas de tela
 
 ---
 
-Desenvolvido por **Mateus Vieira** ·
+Desenvolvido por **Mateus Vieira**
