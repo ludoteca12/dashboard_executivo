@@ -1,0 +1,46 @@
+{
+  "arquivo_saida": "dashboard_executivo_case.pdf",
+  "autor": "Mateus Vieira",
+  "titulo": "Dashboard Executivo de Vendas",
+  "subtitulo": "Painel em Power BI para a diretoria acompanhar receita, pedidos, margem e crescimento de uma operação de vendas, sem montar relatório na mão.",
+  "desafio": "A diretoria de uma empresa com três linhas de negócio (Hardware, Software e Serviços) precisava responder rápido às perguntas de sempre: <b>estamos vendendo mais que no ano passado? Onde a margem está abaixo da meta? Quais clientes e regiões puxam o resultado?</b> Antes, cada resposta exigia cruzar planilhas manualmente.",
+  "solucao": [
+    "Painel único com os 4 números principais, que <b>mudam de cor sozinhos</b>: verde quando cresce, vermelho quando cai.",
+    "Gráfico de tendência em que o gestor <b>escolhe o que quer ver</b>: pedidos, receita ou crescimento mês a mês.",
+    "Margem por linha de produto comparada à <b>meta de 10%</b>, com destaque automático do que precisa de atenção.",
+    "Do resumo ao detalhe com um clique: <b>região, país e cliente</b>, mais um resumo rápido ao passar o mouse."
+  ],
+  "imagem_principal": {
+    "arquivo": "../imgs/img_painel_executivo.PNG",
+    "legenda": "Resumo executivo: KPIs, tendência com seletor de métrica, receita por segmento, margem vs. meta e visão por categoria."
+  },
+  "destaques_titulo": "O que a diretoria passa a enxergar",
+  "destaques": [
+    {"valor": "+5,5%", "texto": "de crescimento da receita em relação ao ano anterior, visível logo na primeira tela."},
+    {"valor": "7,7%", "texto": "de margem em Serviços Gerenciados: abaixo da meta, sinalizada em vermelho automaticamente."},
+    {"valor": "1 clique", "texto": "para sair do resumo executivo e chegar ao detalhe por região, país e cliente."}
+  ],
+  "pagina2_titulo": "Detalhamento e navegação",
+  "imagem_secundaria": {
+    "arquivo": "../imgs/img_drill.PNG",
+    "legenda": "Página de detalhamento: abre com o filtro do segmento ou categoria clicado e mostra clientes, pedidos por mês e receita por subcategoria."
+  },
+  "imagem_lateral": {
+    "arquivo": "../imgs/img_tooltip.PNG",
+    "legenda": "Resumo que aparece ao passar o mouse no gráfico de tendência."
+  },
+  "recursos": [
+    "Filtros por ano e região",
+    "Seletor de métrica no gráfico",
+    "Detalhamento com botão direito",
+    "Botão para voltar ao resumo",
+    "Resumo ao passar o mouse"
+  ],
+  "como_foi_feito": [
+    "<b>Dados organizados</b> em um modelo simples e rápido, separando vendas, clientes, produtos e calendário.",
+    "<b>Cálculos validados</b> para comparar com o ano anterior de forma justa, mesmo com o ano ainda em andamento.",
+    "<b>Atualização automática:</b> basta clicar em Atualizar quando chegam novos dados, sem retrabalho.",
+    "<b>Projeto documentado</b> e versionado, fácil de manter e evoluir."
+  ],
+  "rodape": "Mateus Vieira · Analista de Dados · Dados fictícios, gerados para demonstração"
+}

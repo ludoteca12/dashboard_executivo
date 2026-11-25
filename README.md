@@ -95,6 +95,7 @@ dashboard_executivo.Report/            # relatório em PBIR (páginas e visuais 
 data/                                  # CSVs sintéticos
 scripts/gerar_dados.py                 # gerador dos dados
 imgs/                                  # capturas de tela
+pdf/                                   # case do projeto em PDF
 ```
 
 ---
